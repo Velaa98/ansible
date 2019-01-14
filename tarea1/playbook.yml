@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: yes
+  name: Actualizar lista de paquetes e instalar apache
+  tasks:
+  - name: Actualizar lista de paquetes
+    apt: update_cache=yes
+
+  - name: Asegurarse que apache está instalado
+    apt: name=apache2 state=latest
+
+  - name: Cambiar index html
+    copy: >
+      src=files/var/www/html/index.html
+      dest=/var/www/html/index.html
+      mode=644
+      owner=www-data
+      group=www-data
+    notify:
+      - restart apache
