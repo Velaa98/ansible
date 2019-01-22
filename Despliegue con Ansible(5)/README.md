@@ -7,6 +7,6 @@ Configura apropiadamente nodo1 y nodo2 con ansible para instalar la aplicación 
 
 El cliente simplemente levantará el escenario y configurará como DNS primario el de nodo1, para acceder a un drupal totalmente configurado en drupal.example.com.
 
-###IMPORTANTE: No se considerará terminada la tarea si lo que aparece es el sistema de configuración del sitio en drupal, el sitio web tiene que estar totalmente configurado y listo para usar.
+#### IMPORTANTE: No se considerará terminada la tarea si lo que aparece es el sistema de configuración del sitio en drupal, el sitio web tiene que estar totalmente configurado y listo para usar.
 
 El resultado se tiene que proporcionar como un repositorio en github
