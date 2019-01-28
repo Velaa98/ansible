@@ -1,4 +1,10 @@
-Vagrant.configure("2") do |config|
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
 
  config.vm.define "nodo1" do |nodo1|
    config.vm.provider "virtualbox" do |vb|
@@ -25,3 +31,7 @@ Vagrant.configure("2") do |config|
   end
 
 end
+
+# config.vm.provision "ansible" do |ansible|
+#   ansible.verbose = 'v'
+
