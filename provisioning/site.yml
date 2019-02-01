@@ -4,15 +4,14 @@
 - hosts: all
   roles:
     - role: common
-
-### Instala en el nodo 1 los roles correspondientes (dns y bd).
-- hosts: nodo1
-  roles:
-    - role: bind9
-    - role: postgresql
-
-### Instala en el nodo 2 los roles correspondientes (servidor web y módulo php)
-- hosts: nodo2
-  roles:
-   - role: apache
-   - role: php
+#
+#### Instala en el nodo 1 los roles correspondientes (dns y bd).
+#- hosts: nodo1
+#  roles:
+#    - role: bind9
+#    - role: postgresql
+#### Instala en el nodo 2 los roles correspondientes (servidor web y módulo php)
+#- hosts: nodo2
+#  roles:
+#   - role: apache
+#   - role: php
