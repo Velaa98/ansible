@@ -1,0 +1,6 @@
+ANSIBLE_SSH_PIPELINING: True
+
+# Base de datos
+db_name: drupal_db
+db_user: drupal
+db_pass: drupal
