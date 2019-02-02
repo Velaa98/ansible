@@ -15,11 +15,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      vb.name = "nodo1"
      vb.cpus = 1
     end
-
-  nodo1.vm.box = "debian/stretch64"
-  nodo1.vm.hostname = "nodo1"
-  nodo1.vm.network :public_network,:bridge=>"eth0"
-  nodo1.vm.network :private_network, ip: "10.0.0.10"
+	
+   nodo1.vm.box = "debian/stretch64"
+   nodo1.vm.hostname = "nodo1"
+   nodo1.vm.network :public_network,:bridge=>"eth0"
+   nodo1.vm.network :private_network, ip: "10.0.0.10"
   end
 
 
@@ -27,12 +27,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    config.vm.provider "virtualbox" do |vb|
      vb.name = "nodo2"
      vb.cpus = 1
-    end
+   end
 
-  nodo2.vm.box = "debian/stretch64"
-  nodo2.vm.hostname = "nodo2"
-  nodo2.vm.network :public_network,:bridge=>"eth0"
-  nodo2.vm.network :private_network, ip: "10.0.0.11"
-  end
+   nodo2.vm.box = "debian/stretch64"
+   nodo2.vm.hostname = "nodo2"
+   nodo2.vm.network :private_network, ip: "10.0.0.11"
+ end
 
 end

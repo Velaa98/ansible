@@ -1,0 +1,29 @@
+---
+
+- name: Instalación del servidor DNS.
+  become: yes
+  apt:
+    name: bind9
+
+- name: Configuración del servidor DNS.
+  become: yes
+  copy:
+    src: "{{ item }}"
+    dest: /etc/bind/
+    owner: root
+    group: bind
+    mode: 0644
+  with_fileglob:
+    - etc/bind/*
+
+- name: Configuración de las zonas del DNS.
+  become: yes
+  copy:
+    src: "{{ item }}"
+    dest: /var/cache/bind/
+    owner: root
+    group: root
+    mode: 0644
+  with_fileglob:
+    - var/cache/bind/*
+  notify: restart bind9

@@ -1,4 +1,5 @@
 ---
-  - name: Actualizar el sistema
-    become: yes
-    apt: update_cache=yes upgrade=yes
+
+- name: Actualizar el sistema
+  become: yes
+  apt: update_cache=yes upgrade=yes
