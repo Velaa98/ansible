@@ -31,6 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
    nodo2.vm.box = "debian/stretch64"
    nodo2.vm.hostname = "nodo2"
+   nodo2.vm.network :public_network,:bridge=>"eth0"
    nodo2.vm.network :private_network, ip: "10.0.0.11"
  end
 

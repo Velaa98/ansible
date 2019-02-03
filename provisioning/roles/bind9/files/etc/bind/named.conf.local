@@ -1,6 +1,6 @@
-zone "example.org" {
+zone "example.com" {
     type master;
-    file "db.example.org";
+    file "db.example.com";
 };
 
 zone "0.0.10.in-addr.arpa" {

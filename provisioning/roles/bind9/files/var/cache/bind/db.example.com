@@ -1,6 +1,6 @@
-$ORIGIN example.org.
+$ORIGIN example.com.
 $TTL	86400
-@       IN      SOA     nodo1.          nodo1@example.org. (
+@       IN      SOA     nodo1.          nodo1@example.com. (
                               1
                          604800
                           86400
