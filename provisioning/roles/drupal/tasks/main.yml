@@ -1,0 +1,32 @@
+---
+
+### Descartado por posibles futuros problemas de incompatibilidad al descargar la última versión siempre.
+#- name: Descargar drupal.
+#  become: yes
+#  get_url:
+#    url: https://www.drupal.org/download-latest/tar.gz
+#    dest: /var/www/html/drupal.tgz
+
+#- name: Descomprime drupal.
+#  become: yes
+#  unarchive:
+#    remote_src: yes
+#    src: /var/www/html/drupal.tgz
+#    dest: /var/www/html/
+#    owner: www-data
+#    group: www-data
+
+#- name: Importar la configuración de drupal.
+#  become: yes
+#  copy:
+#    src: var/www/html/drupal/sites/default/settings.php
+#    dest: /var/www/html/drupal/sites/default/settings.php
+
+
+- name: Importación y descompresión de drupal.
+  become: yes
+  unarchive:
+    src: var/www/html/drupal.tgz
+    dest: /var/www/html/
+    owner: www-data
+    group: www-data

@@ -33,3 +33,21 @@
 #  postgresql_db:
 #    name: drupal_db
 #    target: drupal.sql
+
+- name: Importar la base de datos de drupal.
+  become: yes
+  copy:
+    src: opt/backups/drupal.sql
+    dest: /tmp/drupal.sql
+
+- name: Restaurar la base de datos de drupal.
+  vars:
+    ansible_ssh_pipelining: true
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: drupal_db
+    state: restore
+    target: /tmp/drupal.sql
+
+

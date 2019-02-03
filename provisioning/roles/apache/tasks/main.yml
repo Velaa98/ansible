@@ -1,3 +1,15 @@
 ---
-- name: Instalar apache
-  apt: apache2
+
+- name: Instalación de apache2.
+  become: yes
+  apt:
+     name: apache2
+
+- name: Configuración del virtualhost.
+  become: yes
+  copy:
+    src: etc/apache2/sites-available/drupal.conf
+    dest: /etc/apache2/sites-available/
+    owner: root
+    group: root
+    mode: 0644

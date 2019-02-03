@@ -1,0 +1,12 @@
+---
+
+- name: Instalación del módulo PHP para apache y las extensiones necesarias para drupal.
+  become: yes
+  apt:
+    name:
+      - php7.0
+      - php7.0-pgsql
+      - php7.0-gd
+      - php7.0-xml
+      - php7.0-mbstring
+      - libapache2-mod-php7.0

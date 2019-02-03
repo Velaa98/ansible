@@ -4,17 +4,19 @@
   gather_facts: false
   hosts: all
   roles:
-    - role: common
+    - common
 
 - name: Instala y configura en el nodo 1 los roles correspondientes (dns y bd).
   gather_facts: false
   hosts: nodo1
   roles:
-    - role: bind9
-    - role: postgresql
+    - bind9
+    - postgresql
 
-### Instala en el nodo 2 los roles correspondientes (servidor web y módulo php).
-#- hosts: nodo2
-#  roles:
-#   - role: apache
-#   - role: php
+- name: Instala en el nodo 2 los roles correspondientes (servidor web y módulo php).
+  gather_facts: false
+  hosts: nodo2
+  roles:
+    - apache
+    - php
+    - drupal
