@@ -13,3 +13,15 @@
     owner: root
     group: root
     mode: 0644
+
+- name: Activar el virtualhost.
+  become: yes
+  file:
+    src: /etc/apache2/sites-available/drupal.conf
+    dest: /etc/apache2/sites-enabled/drupal.conf
+    owner: root
+    group: root
+    mode: 0644
+    state: link
+  notify:
+    - restart apache2
