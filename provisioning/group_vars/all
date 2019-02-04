@@ -7,5 +7,5 @@ db_pass: drupal
 
 # Nodos
 
-#ip_nodo1: 10.0.0.10
-#ip_nodo2: 10.0.0.11
+ip_nodo1: 10.0.0.10
+ip_nodo2: 10.0.0.11
