@@ -23,5 +23,4 @@
     group: root
     mode: 0644
     state: link
-  notify:
-    - restart apache2
+  notify: restart apache2

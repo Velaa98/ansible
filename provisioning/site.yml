@@ -1,20 +1,20 @@
 ---
 
 - name: Actualiza el sistema.
-  gather_facts: false
+  gather_facts: yes
   hosts: all
   roles:
     - common
 
 - name: Instala y configura en el nodo 1 los roles correspondientes (dns y bd).
-  gather_facts: false
+  gather_facts: no
   hosts: nodo1
   roles:
     - bind9
     - postgresql
 
 - name: Instala en el nodo 2 los roles correspondientes (servidor web y módulo php).
-  gather_facts: false
+  gather_facts: no
   hosts: nodo2
   roles:
     - apache

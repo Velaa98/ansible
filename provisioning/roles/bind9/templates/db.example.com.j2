@@ -1,0 +1,13 @@
+$ORIGIN example.com.
+$TTL	86400
+@       IN      SOA     nodo1.          nodo1@example.com. (
+                              1
+                         604800
+                          86400
+                        2419200
+                          86400 )
+;
+@	IN	NS	nodo1.
+nodo1	IN	A	{{ nodo1.ansible_eth1.ipv4.address }}
+nodo2	IN	A	{{ nodo2.ansible_eth1.ipv4.address }}
+drupal	IN	CNAME	nodo2

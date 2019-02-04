@@ -5,6 +5,9 @@
   apt:
     name: bind9
 
+- name: Asegurarse que el servicio está corriendo y se iniciará en el próximo reinicio.
+  service: name=bind9 state=started enabled=yes
+
 - name: Configuración del servidor DNS.
   become: yes
   copy:
@@ -16,14 +19,23 @@
   with_fileglob:
     - etc/bind/*
 
+#- name: Configuración de las zonas del DNS.
+#  become: yes
+#  copy:
+#    src: "{{ item }}"
+#    dest: /var/cache/bind/
+#    owner: root
+#    group: root
+#    mode: 0644
+#  with_fileglob:
+#    - var/cache/bind/*
+#  notify: restart bind9
+
 - name: Configuración de las zonas del DNS.
   become: yes
-  copy:
-    src: "{{ item }}"
-    dest: /var/cache/bind/
+  template:
+    src: db.example.com.j2
+    dest: /var/cache/bind/db.example.com
     owner: root
     group: root
     mode: 0644
-  with_fileglob:
-    - var/cache/bind/*
-  notify: restart bind9
