@@ -4,3 +4,8 @@ ANSIBLE_SSH_PIPELINING: True
 db_name: drupal_db
 db_user: drupal
 db_pass: drupal
+
+# Nodos
+
+ip_nodo1: 10.0.0.10
+ip_nodo2: 10.0.0.11

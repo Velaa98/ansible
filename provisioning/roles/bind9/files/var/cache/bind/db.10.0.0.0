@@ -1,6 +1,6 @@
-$ORIGIN example.org.
+$ORIGIN 0.0.10.in-addr.arpa.
 $TTL	86400   
-@       IN      SOA     nodo1.          nodo1@example.org. (
+@       IN      SOA     nodo1.          nodo1@example.com. (
                               1
                          604800
                           86400
@@ -8,5 +8,5 @@ $TTL	86400
                           86400 )
 ;
 @	IN	NS	nodo1.
-nodo1	IN	A	10.0.0.10
-nodo2	IN	A	10.0.0.11
+nodo1.example.com.	IN	PRT	10
+nodo2.example.com.	IN	PTR	11
