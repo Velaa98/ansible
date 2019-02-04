@@ -30,11 +30,6 @@
     name: "{{ db_name }}"
     owner: drupal
 
-#- name: Importar datos de drupal:
-#  postgresql_db:
-#    name: drupal_db
-#    target: drupal.sql
-
 - name: Importar la base de datos de drupal.
   become: yes
   copy:
@@ -51,4 +46,15 @@
     state: restore
     target: /tmp/drupal.sql
 
+- name: Configurar la bd para que escuche desde cualquier IP.
+  become: yes
+  shell: echo "listen_address = '*'" >> /etc/postgresql/9.6/main/postgresql.conf
 
+- name: Configuración de la bd para que sea accesible desde nodo2.
+  become: yes
+  template:
+    src: pg_hba.conf.j2
+    dest: /etc/postgresql/9.6/main/pg_hba.conf
+    owner: postgres
+    group: postgres
+    mode: 0640
