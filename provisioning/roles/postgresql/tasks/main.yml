@@ -9,6 +9,7 @@
     install_recommends: no
 
 - name: Asegurarse que el servicio está corriendo y se iniciará en el próximo reinicio.
+  become: yes
   service: name=postgresql state=started enabled=yes
 
 - name: Creación del usuario para drupal.
