@@ -48,7 +48,7 @@
 
 - name: Configurar la bd para que escuche desde cualquier IP.
   become: yes
-  shell: echo "listen_address = '*'" >> /etc/postgresql/9.6/main/postgresql.conf
+  shell: echo "listen_addresses = '*'" >> /etc/postgresql/9.6/main/postgresql.conf
 
 - name: Configuración de la bd para que sea accesible desde nodo2.
   become: yes
@@ -58,3 +58,4 @@
     owner: postgres
     group: postgres
     mode: 0640
+  notify: restart postgresql
