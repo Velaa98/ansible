@@ -25,13 +25,13 @@ git clone https://github.com/Velaa98/ansible.git
 
 ### Creación de un entorno virtual con ansible
 
-He probado con un entorno de python3 y me ha dado problemas a la hora de ejecutar ansible, por ello uso python2.
+He probado con un entorno de python3 y me ha dado problemas a la hora de ejecutar ansible, por ello uso python2. Con las versiones indicadas en el requirements.txt funciona correctamente el escenario:
 
 ```
 apt install virtualenv python-pip
 virtualenv --python=python2.7 ansible
 source ansible/bin/activate
-pip install ansible
+pip install -r requirements.txt
 ```
 
 ### Despliegue de las máquinas
